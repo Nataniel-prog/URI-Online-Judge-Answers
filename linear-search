@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package linearsearch;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner; 
+
+public class LinearSearch {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Random gerador = new Random();
+        int i = 0, j = 0, k = 0;
+        
+        int[] index = new int[10000];
+        
+        while(i<10000){
+            int numero = gerador.nextInt(10000);
+            index[i] = numero;
+            i++;
+        }
+        System.out.println(Arrays.toString(index));
+        
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Entre com o número a ser buscado de 0 à 10.000: \n");
+        int x = reader.nextInt();
+        
+        while(j<10000){
+            if(index[j] == x){
+                k = x;
+                System.out.print("O número " + index[j] + " foi encontrado na posição " + j + " do vetor\n");
+                break;
+            }
+            j++;
+        }
+        if(x != k){
+            System.out.print("Número não foi encontrado! :(");
+        }
+        
+    }
+    
+    
+}
