@@ -1,0 +1,49 @@
+package javapenis;
+
+import java.util.Scanner;
+
+public class JavaPenis {
+
+    public static int buscaBinaria(int vetor[], int maior, int chave){
+        
+        int menor = 0;
+        
+        while(menor <= maior){
+            int meio = (menor+maior)/2;
+            if(chave == vetor[meio]){
+                return meio;
+            }else if(chave < vetor[meio]){
+                maior = meio  - 1;
+            }else{
+                menor = meio + 1;
+            }
+        }   
+                
+        return 0;
+    }
+       
+    public static int numeroChave(){
+        
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Entre com o número a ser buscado: ");
+        int numero = reader.nextInt();
+        return numero;
+    }
+    
+    public static int maior(int vetor[]){
+        return vetor.length - 1;
+    }
+    
+    public static void main(String[] args) {
+        int[] vetor = {21, 45, 51, 55, 68, 85, 90};
+        int chave = numeroChave();
+        int resultado = buscaBinaria(vetor, maior(vetor), chave);
+
+        if(resultado != 0){
+            System.out.printf("Encontrou o valor %d na posição %d \n", chave, resultado);     
+        }else{
+            System.out.print("Não encontrado!!!\n");
+        }
+    }    
+}
+
