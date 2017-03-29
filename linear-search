@@ -1,48 +1,59 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package linearsearch;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner; 
+package javapenis;
 
-public class LinearSearch {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Random gerador = new Random();
-        int i = 0, j = 0, k = 0;
+public class JavaPenis {
+
+    public static int buscaBinaria(int vetor[], int maior, int chave){
         
-        int[] index = new int[10000];
+        int menor = 0;
+        int iteracoes = 0;
         
-        while(i<10000){
-            int numero = gerador.nextInt(10000);
-            index[i] = numero;
-            i++;
-        }
-        System.out.println(Arrays.toString(index));
+        while(menor <= maior){
+            int meio = (menor+maior)/2;
+            iteracoes = iteracoes + 1;
+            if(chave == vetor[meio]){
+                System.out.printf("Foram realizadas %d iterações e a chave %d foi encontrada na posição %d\n", iteracoes, chave, meio);
+                return meio;
+            }else if(chave < vetor[meio]){
+                maior = meio - 1;
+            }else{
+                menor = meio + 1;
+            }
+        }   
+        System.out.printf("Foram realizadas %d iterações e a chave %d não foi encontrada!\n", iteracoes, chave);
+        
+        return 0;
+    }
+       
+    public static int numeroChave(){
         
         Scanner reader = new Scanner(System.in);
-        System.out.println("Entre com o número a ser buscado de 0 à 10.000: \n");
-        int x = reader.nextInt();
-        
-        while(j<10000){
-            if(index[j] == x){
-                k = x;
-                System.out.print("O número " + index[j] + " foi encontrado na posição " + j + " do vetor\n");
-                break;
-            }
-            j++;
-        }
-        if(x != k){
-            System.out.print("Número não foi encontrado! :(");
-        }
-        
+        System.out.println("Entre com o número a ser buscado: ");
+        int numero = reader.nextInt();
+        return numero;
     }
     
+    public static int maior(int vetor[]){
+        return vetor.length - 1;
+    }
     
+    public static int[] geradora(int tamanho){
+        int[] vetor = new int[tamanho];
+        int i;
+        for(i=0; i<tamanho; i++){
+            vetor[i] = i + 2 * 3;
+        }
+        return vetor;
+    }
+    
+    public static void main(String[] args) {
+        int tamanho = 100000;
+        int[] vetor = geradora(tamanho);
+        int chave = numeroChave();
+        buscaBinaria(vetor, maior(vetor), chave);
+
+    }    
 }
+
+  
