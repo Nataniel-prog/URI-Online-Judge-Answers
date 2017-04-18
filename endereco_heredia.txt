@@ -1,0 +1,9 @@
+\\10.135.0.60\
+   cas-uni educacional\
+     Graduacao\Engenharia de Computação\
+       Eduardo Heredia\
+         2016-2\
+           OVA Ubuntu Desktop
+
+
+git add *
