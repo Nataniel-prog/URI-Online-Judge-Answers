@@ -1,4 +1,4 @@
-# Welcome to URI Online Judge Answers
-### printf("Hello world!\n"); ---> In this repository I will add all my URI Jugde answers done with C Programming.
+# URI Online Judge Answers
+### printf("Hello world!\n"); 
 
-Here I will share all my answers. 
+Respostas dos exercícios do site https://www.urionlinejudge.com.br
