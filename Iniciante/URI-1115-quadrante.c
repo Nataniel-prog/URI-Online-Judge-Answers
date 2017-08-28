@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 int main(int argc, char const *argv[]){
     int X, Y;
     while(scanf("%d %d", &X, &Y)){
